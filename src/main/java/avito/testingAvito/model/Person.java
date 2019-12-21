@@ -20,14 +20,11 @@ public class Person {
     @OneToMany(orphanRemoval = true, mappedBy = "person", fetch = FetchType.EAGER)
     private Set<ClosedDate> closedDateSet = new HashSet<>();
 
-    private Set<Meeting> meetingSet = new HashSet<>();
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "person_meeting",
             joinColumns = @JoinColumn(name = "person_id"),
             inverseJoinColumns = @JoinColumn(name = "meeting_id"))
-    public Set<Meeting> getMeetingSet () {
-        return meetingSet;
-    }
+    private Set<Meeting> meetingSet;
 
     public String getName() {
         return name;
@@ -47,5 +44,17 @@ public class Person {
 
     public void setMeetingSet(Set<Meeting> meetingSet) {
         this.meetingSet = meetingSet;
+    }
+
+    public Set<ClosedDate> getClosedDateSet() {
+        return closedDateSet;
+    }
+
+    public void setClosedDateSet(Set<ClosedDate> closedDateSet) {
+        this.closedDateSet = closedDateSet;
+    }
+
+    public Set<Meeting> getMeetingSet() {
+        return meetingSet;
     }
 }

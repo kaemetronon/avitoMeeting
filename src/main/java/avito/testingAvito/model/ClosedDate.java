@@ -1,6 +1,7 @@
 package avito.testingAvito.model;
 
 import javax.persistence.*;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -13,7 +14,7 @@ public class ClosedDate {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    private Date date;
+    private String date;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "person_id")
@@ -22,12 +23,12 @@ public class ClosedDate {
     public ClosedDate() {
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
     public void setDate(Date date) {
-        this.date = date;
+        this.date = new SimpleDateFormat("yyyy.MM.dd").format(date);
     }
 
     public Person getPerson() {

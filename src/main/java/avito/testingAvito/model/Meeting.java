@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+@Entity
+@Table(name = "meeting")
 public class Meeting {
 
     @Id
@@ -14,14 +16,12 @@ public class Meeting {
     private String title;
     private Date date;
 
-    private Set<Person> personSet = new HashSet<>();
     @ManyToMany
     @JoinTable(name = "person_meeting",
             joinColumns = @JoinColumn(name = "meeting_id"),
             inverseJoinColumns = @JoinColumn(name = "person_id"))
-    public Set<Person> getPersonSet() {
-        return personSet;
-    }
+    private Set<Person> personSet;
+
 
     public Meeting() {
     }
@@ -44,5 +44,9 @@ public class Meeting {
 
     public void setPersonSet(Set<Person> personSet) {
         this.personSet = personSet;
+    }
+
+    public Set<Person> getPersonSet() {
+        return personSet;
     }
 }
