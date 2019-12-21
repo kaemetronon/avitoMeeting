@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>isPresent</title>
+</head>
+<body>
+<center>
+
+    {{#dptsList}}
+        <b>{{title.toUpperCase}}</b>
+        </br>
+    {{/dptsList}}
+
+    {{#chosenDpt}}
+        </br>
+        <form action="/processing/isPresent/dpts/handleTitle" method="post">
+            <div><label> Input title of a department <input type="text" name="dptName"/> </label></div>
+            <div><input type="submit" value="Ok"/></div>
+        </form>
+    {{/chosenDpt}}
+
+    {{#emplForFullList}}
+        <b>{{firstName}} {{lastName}} {{status.toString}} at {{department.getTitle.toUpperCase}} department</b>
+        </br>
+    {{/emplForFullList}}
+
+    {{#notFullEmplList}}
+        <b>{{firstName}} {{lastName}}</b>
+        </br>
+    {{/notFullEmplList}}
+
+    {{#chosenEmpl}}
+        </br>
+        <form action="/processing/isPresent/dpts/handleName" method="post">
+            <div><label> Input name of employee <input type="text" name="emplName"/> </label></div>
+            <div><input type="submit" value="Ok"/></div>
+        </form>
+    {{/chosenEmpl}}
+
+
+
+
+    <a href="/processing/isPresent">Back to previous page</a> </br>
+    <a href="/">Back home</a>
+</center>
+</body>
+</html>

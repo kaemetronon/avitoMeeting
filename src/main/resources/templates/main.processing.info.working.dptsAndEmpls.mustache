@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>List</title>
+</head>
+<body>
+<center>
+{{#dptSet}}
+    {{title.toUpperCase}}
+    </br>
+{{/dptSet}}
+</br>
+
+{{#title}}
+    <form action="/processing/info/workingDptList/chosenDpt" method="post">
+        <div><label> Input title of a department to show employees <input type="text" name="dptName"/> </label></div>
+        <div><input type="submit" value="Ok"/></div>
+    </form>
+{{/title}}
+
+    {{#employeesFromDpt}}
+        <b>{{firstName}} {{lastName}} {{status}}</b>
+        </br>
+    {{/employeesFromDpt}}
+
+    {{#employeesFromNowhere}}
+        <b>{{firstName}} {{lastName}} {{status.toString.toLowerCase}} at {{department.getTitle.toUpperCase}} department</b>
+<!--    еще вчера все работало(department.getTitle). все сломалось после того,
+как я поменял методы в репозитории, добавив OrderBy.. -->
+        </br>
+    {{/employeesFromNowhere}}
+
+
+    <a href="/processing/info/working">Back to previous page</a> </br>
+    <a href="/">Back home</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>isPresent</title>
+</head>
+<body>
+<center>
+    {{#msg}}
+        {{msg}}
+        </br> </br>
+    {{/msg}}
+
+    <a href="/processing/isPresent/dpts">Navigation through the departments list</a> </br>
+    <a href="/processing/isPresent/empls">Navigation through the employees list</a> </br>
+
+    <form action="/processing/isPresent/dpts/handleName" method="post">
+        <div><label> Or you may find employee right now <input type="text" name="emplName"/> </label></div>
+        <div><input type="submit" value="Ok"/></div>
+    </form>
+
+
+    <a href="/processing/isPresent">Back to previous page</a> </br>
+    <a href="/">Back home</a>
+</center>
+</body>
+</html>

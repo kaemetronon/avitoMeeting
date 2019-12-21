@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a500982f-8ae8-4ad3-a958-43dfa8e43807" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="avitoMeeting@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="avitoMeeting@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="avitoMeeting: database" type="162271b6:PgImplModel$Database" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1VFzTavtJXheGHn62aMgR2Qlmt9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Igor\IdeaProjects\testingAvito\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="avito.testingAvito.Application" />
+      <module name="testingAvito" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a500982f-8ae8-4ad3-a958-43dfa8e43807" name="Default Changelist" comment="" />
+      <created>1576863639295</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1576863639295</updated>
+      <workItem from="1576863644149" duration="2000" />
+      <workItem from="1576909465468" duration="1965000" />
+      <workItem from="1576915865682" duration="3139000" />
+      <workItem from="1576919201246" duration="25000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="275" y="44" key="#Assign_Data_Sources" timestamp="1576917197164">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="275" y="44" key="#Assign_Data_Sources/0.0.1366.768@0.0.1366.768" timestamp="1576917197164" />
+    <state x="275" y="44" key="#Inspections" timestamp="1576917336620">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="275" y="44" key="#Inspections/0.0.1366.768@0.0.1366.768" timestamp="1576917336620" />
+    <state x="275" y="44" key="#Project_Structure" timestamp="1576919059693">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="275" y="44" key="#Project_Structure/0.0.1366.768@0.0.1366.768" timestamp="1576919059693" />
+    <state x="137" y="40" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576916952891">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="137" y="40" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1576916952891" />
+    <state x="488" y="75" key="#com.intellij.ide.util.MemberChooser" timestamp="1576918458856">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="488" y="75" key="#com.intellij.ide.util.MemberChooser/0.0.1366.768@0.0.1366.768" timestamp="1576918458856" />
+    <state x="412" y="172" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1576910094371">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="412" y="172" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.768@0.0.1366.768" timestamp="1576910094371" />
+    <state x="413" y="132" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1576910851205">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="413" y="132" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.768@0.0.1366.768" timestamp="1576910851205" />
+    <state x="463" y="140" key="FileChooserDialogImpl" timestamp="1576917393105">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="463" y="140" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1576917393105" />
+    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1576916986897">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1366.768@0.0.1366.768" timestamp="1576916986897" />
+    <state x="186" y="14" key="SettingsEditor" timestamp="1576919226888">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="186" y="14" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1576919226888" />
+  </component>
+</project>

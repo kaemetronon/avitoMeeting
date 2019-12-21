@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>isPresent</title>
+</head>
+<body>
+<center>
+
+    {{#radio}}
+        <form action="/processing/isPresent/option" method="post">
+            <div>
+                <input type="radio" name="value" value=enter>Enter attendance of employee<br>
+                <input type="radio" name="value" value=view>View attendance of employee<br>
+            </div>
+            <div>
+                <button type="submit">Ok</button>
+            </div>
+        </form>
+    {{/radio}}
+
+    {{#resultEmployee}}
+        <div>Attendance of {{firstName}} {{lastName}}:</div>
+        </br>
+    {{/resultEmployee}}
+
+    {{#resultAttendances}}
+        <div>{{date}} {{isPresent}}</div>
+    {{/resultAttendances}}
+
+
+
+    <a href="/processing">Back to previous page</a> </br>
+    <a href="/">Back home</a>
+</center>
+</body>
+</html>
