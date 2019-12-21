@@ -3,30 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a500982f-8ae8-4ad3-a958-43dfa8e43807" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/controller/UploadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/model/ClosedDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/model/ClosedDate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/model/Meeting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/model/Meeting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/model/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/repo/DepartmentRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/service/dbase/DepartmentDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main.mustache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.processing.info.fired.mustache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.processing.info.mustache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.processing.info.working.dptsAndEmpls.mustache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.processing.info.working.mustache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.processing.isPresent.addAttendance.mustache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.processing.isPresent.mustache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.processing.isPresent.option.mustache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.processing.isPresent.outList.mustache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.processing.movement.change.mustache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.processing.movement.mustache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.processing.mustache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.upload.addNew.mustache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.upload.changeInfo.editInfo.inputNewInfo.mustache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.upload.changeInfo.editInfo.mustache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.upload.changeInfo.mustache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.upload.mustache" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +46,9 @@
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1VFzTavtJXheGHn62aMgR2Qlmt9" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -129,12 +107,35 @@
       <workItem from="1576909465468" duration="1965000" />
       <workItem from="1576915865682" duration="3139000" />
       <workItem from="1576919201246" duration="9174000" />
-      <workItem from="1576928454626" duration="250000" />
+      <workItem from="1576928454626" duration="516000" />
     </task>
+    <task id="LOCAL-00001" summary="temp commit">
+      <created>1576928915389</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1576928915389</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="temp commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="temp commit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="44" key="#Assign_Data_Sources" timestamp="1576917197164">
@@ -177,10 +178,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="413" y="132" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.768@0.0.1366.768" timestamp="1576910851205" />
-    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1576928820833">
+    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1576928912544">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1576928820833" />
+    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1576928912544" />
     <state x="463" y="140" key="FileChooserDialogImpl" timestamp="1576926573236">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
