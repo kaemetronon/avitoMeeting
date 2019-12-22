@@ -1,28 +1,67 @@
 package avito.testingAvito.controller;
 
-import avito.testingAvito.model.ClosedDate;
+
 import avito.testingAvito.model.Meeting;
-import avito.testingAvito.model.Person;
-import avito.testingAvito.repo.ClosedDateRepo;
-import avito.testingAvito.repo.MeetingRepo;
-import avito.testingAvito.repo.PersonRepo;
-import avito.testingAvito.service.dbase.MeetingDAO;
+import avito.testingAvito.service.dbase.dao.ClosedDateDAO;
+import avito.testingAvito.service.dbase.dao.MeetingDAO;
+import avito.testingAvito.service.dbase.dao.PersonDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import java.util.Date;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 
 @Controller
 public class MainController {
 
+    private final MeetingDAO meetingDAO;
+    private final ClosedDateDAO closedDateDAO;
+    private final PersonDAO personDAO;
+
     @Autowired
-    private MeetingDAO meetingDAO;
+    public MainController(MeetingDAO meetingDAO, ClosedDateDAO closedDateDAO, PersonDAO personDAO) {
+        this.meetingDAO = meetingDAO;
+        this.closedDateDAO = closedDateDAO;
+        this.personDAO = personDAO;
+    }
+
+
+//    @GetMapping("/")
+//    public String scratch(Map<String, Object> model) {
+//
+//        Calendar calendar = Calendar.getInstance();
+
+//        ClosedDate closedDate = new ClosedDate();
+//        closedDate.setDate(new Date(calendar.get(Calendar.DAY_OF_MONTH),
+//                calendar.get(Calendar.MONTH),
+//                calendar.get(Calendar.YEAR)));
+//        Set<ClosedDate> closedDateSet = new HashSet<>();
+//        closedDateSet.add(closedDate);
+//        closedDate.setPerson(null);
+
+//        Meeting meeting = new Meeting();
+//        meeting.setTitle("title");
+//        meeting.setDate(new Date(calendar.get(Calendar.DAY_OF_MONTH),
+//                calendar.get(Calendar.MONTH),
+//                calendar.get(Calendar.YEAR)));
+//        Set<Meeting> meetingSet = new HashSet<>();
+//        meetingSet.add(meeting);
+
+//        Person person = new Person();
+//        person.setName("name");
+//        person.setMail("mail");
+//        person.setClosedDateSet(null);
+//        Set<Person> personSet = new HashSet<>();
+//        personSet.add(person);
+//        person.setMeetingSet(null);
+//
+//        personDAO.save(person);
+//
+//
+//
+//        return "main";
+//    }
 
     @GetMapping("/")
     public String mainGet(Map<String, Object> model) {
@@ -36,6 +75,7 @@ public class MainController {
 
     @PostMapping("/viewFull")
     public String viewFull(Map<String, Object> model) {
+        //сделать доставание инфы в теле этого метода, на страницу отправить уже готовое
 
         Iterable<Meeting> meetings = meetingDAO.findAll();
 
@@ -43,17 +83,6 @@ public class MainController {
         return "main";
     }
 
-    @PostMapping("/meeting")
-    public String meeting(String title, Map<String, Object> model) {
-
-        Meeting meeting = meetingDAO.findByTitle(title);
-        if (meeting == null) {
-            model.put("msg", "Uncorrect title");
-            return "main";
-        }
-        model.put("personList", meeting.getPersonSet());
-        return "concreteMeeting";
-    }
 }
 
 

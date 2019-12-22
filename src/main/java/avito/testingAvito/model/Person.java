@@ -2,7 +2,6 @@ package avito.testingAvito.model;
 
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -17,14 +16,19 @@ public class Person {
     private String name;
     private String mail;
 
+    @Column(name = "closedDates")
     @OneToMany(orphanRemoval = true, mappedBy = "person", fetch = FetchType.EAGER)
     private Set<ClosedDate> closedDateSet = new HashSet<>();
 
+    @Column(name = "meetings")
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "person_meeting",
             joinColumns = @JoinColumn(name = "person_id"),
             inverseJoinColumns = @JoinColumn(name = "meeting_id"))
-    private Set<Meeting> meetingSet;
+    private Set<Meeting> meetingSet = new HashSet<>();
+
+    public Person() {
+    }
 
     public String getName() {
         return name;
@@ -56,5 +60,29 @@ public class Person {
 
     public Set<Meeting> getMeetingSet() {
         return meetingSet;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void addOneClosedSet(ClosedDate closedDate) {
+        this.closedDateSet.add(closedDate);
+    }
+
+    public void addOneMeeting(Meeting meeting) {
+        this.meetingSet.add(meeting);
+    }
+
+    public void deleteOneMeeting(Meeting meeting) {
+        this.meetingSet.remove(meeting);
+    }
+
+    public void deleteOneClosedDate(ClosedDate closedDate) {
+        this.closedDateSet.remove(closedDate);
     }
 }

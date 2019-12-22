@@ -2,7 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a500982f-8ae8-4ad3-a958-43dfa8e43807" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/testingAvito.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/controller/meeting/MeetingController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/service/dbase/dao/ClosedDateDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/service/dbase/dao/PersonDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/service/mail/MailConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/service/mail/MailConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/service/mail/MailValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/meeting.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/controller/UploadController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/model/ClosedDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/model/ClosedDate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/model/Meeting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/model/Meeting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/model/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/repo/PersonRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/repo/PersonRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/service/MailValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/service/dbase/DBaseFunctional.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/service/dbase/ClosedDateDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/service/dbase/MeetingDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/service/dbase/dao/MeetingDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/service/dbase/PersonDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addMeeting.mustache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/cancelMeeting.mustache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/concreteMeeting.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/toFix.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/testingAvito.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/avito/testingAvito/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/avito/testingAvito/controller/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/avito/testingAvito/model/ClosedDate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/avito/testingAvito/model/ClosedDate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/avito/testingAvito/model/Meeting.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/avito/testingAvito/model/Meeting.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/avito/testingAvito/model/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/avito/testingAvito/model/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/avito/testingAvito/repo/PersonRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/avito/testingAvito/repo/PersonRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/avito/testingAvito/service/MailValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/avito/testingAvito/service/MailValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/avito/testingAvito/service/dbase/ClosedDateDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/avito/testingAvito/service/dbase/ClosedDateDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/avito/testingAvito/service/dbase/MeetingDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/avito/testingAvito/service/dbase/MeetingDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/avito/testingAvito/service/dbase/PersonDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/avito/testingAvito/service/dbase/PersonDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/addMeeting.mustache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/cancelMeeting.mustache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/viewFull.mustache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/todo.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +84,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="1VFzTavtJXheGHn62aMgR2Qlmt9" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -57,6 +103,7 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../untitled" />
@@ -64,18 +111,26 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Igor\IdeaProjects\testingAvito\src\main\java\avito\testingAvito" />
       <recent name="C:\Users\Igor\IdeaProjects\testingAvito\src\main\resources\templates" />
       <recent name="C:\Users\Igor\IdeaProjects\testingAvito\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Unnamed">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="avito.testingAvito.Application" />
       <module name="testingAvito" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="testingAvito" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="avito.testingAvito.Application" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -107,7 +162,14 @@
       <workItem from="1576909465468" duration="1965000" />
       <workItem from="1576915865682" duration="3139000" />
       <workItem from="1576919201246" duration="9174000" />
-      <workItem from="1576928454626" duration="516000" />
+      <workItem from="1576928454626" duration="725000" />
+      <workItem from="1576944909338" duration="6456000" />
+      <workItem from="1576951474427" duration="822000" />
+      <workItem from="1576998345153" duration="10592000" />
+      <workItem from="1577010842268" duration="480000" />
+      <workItem from="1577039155576" duration="623000" />
+      <workItem from="1577039923529" duration="529000" />
+      <workItem from="1577043959539" duration="8223000" />
     </task>
     <task id="LOCAL-00001" summary="temp commit">
       <created>1576928915389</created>
@@ -127,7 +189,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -138,10 +202,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="temp commit" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="275" y="44" key="#Assign_Data_Sources" timestamp="1576917197164">
+    <state x="275" y="44" key="#Assign_Data_Sources" timestamp="1577001711099">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="275" y="44" key="#Assign_Data_Sources/0.0.1366.768@0.0.1366.768" timestamp="1576917197164" />
+    <state x="275" y="44" key="#Assign_Data_Sources/0.0.1366.768@0.0.1366.768" timestamp="1577001711099" />
     <state x="275" y="44" key="#Inspections" timestamp="1576917336620">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -162,14 +226,18 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="446" y="192" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.768@0.0.1366.768" timestamp="1576920839123" />
-    <state x="488" y="75" key="#com.intellij.ide.util.MemberChooser" timestamp="1576922782478">
+    <state x="488" y="75" key="#com.intellij.ide.util.MemberChooser" timestamp="1577000164724">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="488" y="75" key="#com.intellij.ide.util.MemberChooser/0.0.1366.768@0.0.1366.768" timestamp="1576922782478" />
+    <state x="488" y="75" key="#com.intellij.ide.util.MemberChooser/0.0.1366.768@0.0.1366.768" timestamp="1577000164724" />
     <state x="412" y="172" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1576910094371">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="412" y="172" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.768@0.0.1366.768" timestamp="1576910094371" />
+    <state x="534" y="274" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1577039964207">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="534" y="274" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1366.768@0.0.1366.768" timestamp="1577039964207" />
     <state x="395" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1576924931331">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -182,57 +250,73 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="301" y="0" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1576928912544" />
-    <state x="463" y="140" key="FileChooserDialogImpl" timestamp="1576926573236">
+    <state x="463" y="140" key="FileChooserDialogImpl" timestamp="1577053633976">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="463" y="140" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1576926573236" />
-    <state width="1322" height="220" key="GridCell.Tab.0.bottom" timestamp="1576928424995">
+    <state x="463" y="140" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1577053633976" />
+    <state width="1322" height="285" key="GridCell.Tab.0.bottom" timestamp="1577040456917">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1322" height="220" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1576928424995" />
-    <state width="1322" height="220" key="GridCell.Tab.0.center" timestamp="1576928424995">
+    <state width="1322" height="285" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1577040456917" />
+    <state width="1322" height="285" key="GridCell.Tab.0.center" timestamp="1577040456917">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1322" height="220" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1576928424995" />
-    <state width="1322" height="220" key="GridCell.Tab.0.left" timestamp="1576928424995">
+    <state width="1322" height="285" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1577040456917" />
+    <state width="1322" height="285" key="GridCell.Tab.0.left" timestamp="1577040456917">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1322" height="220" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1576928424995" />
-    <state width="1322" height="220" key="GridCell.Tab.0.right" timestamp="1576928424995">
+    <state width="1322" height="285" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1577040456917" />
+    <state width="1322" height="285" key="GridCell.Tab.0.right" timestamp="1577040456917">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1322" height="220" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1576928424995" />
-    <state width="1322" height="172" key="GridCell.Tab.1.bottom" timestamp="1576928424995">
+    <state width="1322" height="285" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1577040456917" />
+    <state width="1322" height="172" key="GridCell.Tab.1.bottom" timestamp="1576952304071">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1322" height="172" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1576928424995" />
-    <state width="1322" height="172" key="GridCell.Tab.1.center" timestamp="1576928424995">
+    <state width="1322" height="172" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1576952304071" />
+    <state width="1322" height="172" key="GridCell.Tab.1.center" timestamp="1576952304071">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1322" height="172" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1576928424995" />
-    <state width="1322" height="172" key="GridCell.Tab.1.left" timestamp="1576928424995">
+    <state width="1322" height="172" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1576952304071" />
+    <state width="1322" height="172" key="GridCell.Tab.1.left" timestamp="1576952304071">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1322" height="172" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1576928424995" />
-    <state width="1322" height="172" key="GridCell.Tab.1.right" timestamp="1576928424995">
+    <state width="1322" height="172" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1576952304071" />
+    <state width="1322" height="172" key="GridCell.Tab.1.right" timestamp="1576952304071">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1322" height="172" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1576928424995" />
+    <state width="1322" height="172" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1576952304071" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1576916986897">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1366.768@0.0.1366.768" timestamp="1576916986897" />
-    <state x="186" y="14" key="SettingsEditor" timestamp="1576919498464">
+    <state x="186" y="0" key="SettingsEditor" timestamp="1577001391653">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="186" y="14" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1576919498464" />
+    <state x="186" y="0" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1577001391653" />
     <state x="494" y="301" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576928893723">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="494" y="301" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.768@0.0.1366.768" timestamp="1576928893723" />
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1576922954964">
+    <state x="413" y="148" key="extract.method.dialog" timestamp="1576949559175">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1576922954964" />
+    <state x="413" y="148" key="extract.method.dialog/0.0.1366.768@0.0.1366.768" timestamp="1576949559175" />
+    <state x="65" y="90" key="new project wizard" timestamp="1577050811860">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="65" y="90" key="new project wizard/0.0.1366.768@0.0.1366.768" timestamp="1577050811860" />
+    <state x="425" y="1" key="refactoring.ChangeSignatureDialog" timestamp="1577000188815">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="425" y="1" key="refactoring.ChangeSignatureDialog/0.0.1366.768@0.0.1366.768" timestamp="1577000188815" />
+    <state x="339" y="167" key="run.anything.popup" timestamp="1577049120215">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="339" y="167" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1577049120215" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1577049115083">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1577049115083" />
   </component>
 </project>

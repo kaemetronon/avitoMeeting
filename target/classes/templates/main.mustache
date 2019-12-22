@@ -6,18 +6,13 @@
 <body>
 <center>
     {{#msg}}
-        <b>List of active meetings: </b>
-        </br>
+        {{msg}}
     {{/msg}}
 
-<!--    {{#MList}}-->
-<!--        <b>{{title}}</b>-->
-<!--        </br>-->
-<!--    {{/MList}}-->
-
-<!--    {{#MListFull}}-->
-<!--        {{personSet.get}}-->
-<!--    {{/MListFull}}-->
+    {{#msgList}}
+        <b>List of active meetings: </b>
+        </br>
+    {{/msgList}}
 
     {{#MList}}
         <b>{{#personSet}}

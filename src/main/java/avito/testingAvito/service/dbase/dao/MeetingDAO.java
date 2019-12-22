@@ -1,4 +1,4 @@
-package avito.testingAvito.service.dbase;
+package avito.testingAvito.service.dbase.dao;
 
 import avito.testingAvito.model.Meeting;
 import avito.testingAvito.repo.MeetingRepo;
@@ -28,9 +28,11 @@ public class MeetingDAO {
     }
 
     //save
-    public void save(Meeting department) {
-        meetingRepo.save(department);
+    public void save(Meeting meeting) {
+        meetingRepo.save(meeting);
     }
 
+    //delete
+    public void delete(Meeting meeting) { meetingRepo.delete(meeting); }
 
 }
