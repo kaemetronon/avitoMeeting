@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Home page</title>
+</head>
+<body>
+<center>
+
+{{#meeting}}
+    <form action="/addMeeting" method="post">
+        <div><label> Input title of new meeting:
+            <input type="text" name="title"/> </label></div>
+        </br>
+        <div><label> Input date of new meeting in the format like this(YYYY.MM.DD):
+            <input type="text" name="date"/> </label></div>
+        </br>
+        <div><input type="submit" value="Create"/></div>
+    </form>
+    </br>
+{{/meeting}}
+
+    {{#person}}
+        <form action="/addMeeting" method="post">
+            <div><label> Input name:
+                <input type="text" name="name"/> </label></div>
+            </br>
+            <div><label> Input mail in the format like this(*@*.*):
+                <input type="text" name="mail"/> </label></div>
+            </br>
+            <div><input type="submit" value="Create"/></div>
+        </form>
+        </br>
+    {{/person}}
+
+
+    <a href="/">Back to main page</a> </br>
+    </br>
+</center>
+</body>
+</html>

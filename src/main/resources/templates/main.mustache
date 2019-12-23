@@ -9,18 +9,6 @@
         {{msg}}
     {{/msg}}
 
-    {{#msgList}}
-        <b>List of active meetings: </b>
-        </br>
-    {{/msgList}}
-
-    {{#MList}}
-        <b>{{#personSet}}
-            {{name}}
-            </br>
-        {{/personSet}}</b>
-        </br>
-    {{/MList}}
 
     <form action="/meeting" method="post">
         <div><label> To view the details about concrete meeting input title:
@@ -29,10 +17,10 @@
     </form>
     </br>
 
-    <a href=" /addMeeting">Add meeting</a> </br>
+    <a href="/addMeeting">Add meeting</a> </br>
     </br>
 
-    <a href=" /cancelMeeting">Cancel meeting</a> </br>
+    <a href="/addPerson">Add person</a> </br>
     </br>
 
     <a href="/viewFull">View full list of meetings&participants</a> </br>

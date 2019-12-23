@@ -39,10 +39,6 @@ public class Meeting {
         return date;
     }
 
-    public void setDate(Date date) {
-        this.date = new SimpleDateFormat("yyyy.MM.dd").format(date);
-    }
-
     public void setPersonSet(Set<Person> personSet) {
         this.personSet = personSet;
     }
@@ -69,5 +65,9 @@ public class Meeting {
 
     public void deleteOnePerson(Person person) {
         this.personSet.remove(person);
+    }
+
+    public void deleteAllPerson() {
+        personSet.removeAll(personSet);
     }
 }

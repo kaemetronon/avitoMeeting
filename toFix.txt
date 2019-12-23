@@ -1,2 +1,0 @@
-meetingControllet->addPerson->all saves
-крч везде, где есть сохранение

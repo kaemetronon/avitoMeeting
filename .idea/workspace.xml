@@ -2,45 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a500982f-8ae8-4ad3-a958-43dfa8e43807" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/testingAvito.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/controller/meeting/MeetingController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/service/dbase/dao/ClosedDateDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/service/dbase/dao/PersonDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/service/mail/MailConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/service/mail/MailConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/service/mail/MailValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/meeting.mustache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/addEntitiy.mustache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/controller/UploadController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/model/ClosedDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/model/ClosedDate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/controller/meeting/MeetingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/controller/concreteMeeting/MeetingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/model/Meeting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/model/Meeting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/model/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/repo/PersonRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/repo/PersonRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/service/MailValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/service/dbase/DBaseFunctional.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/service/dbase/ClosedDateDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/service/dbase/MeetingDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/service/dbase/dao/MeetingDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/service/dbase/PersonDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addMeeting.mustache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/cancelMeeting.mustache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/concreteMeeting.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/toFix.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/service/dbase/DBaseFunctional.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/service/dbase/DBaseFunctional.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main.mustache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/testingAvito.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/temp.mustache" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/avito/testingAvito/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/avito/testingAvito/controller/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/avito/testingAvito/controller/meeting/MeetingController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/avito/testingAvito/model/ClosedDate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/avito/testingAvito/model/ClosedDate.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/avito/testingAvito/model/Meeting.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/avito/testingAvito/model/Meeting.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/avito/testingAvito/model/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/avito/testingAvito/model/Person.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/avito/testingAvito/repo/PersonRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/avito/testingAvito/repo/PersonRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/avito/testingAvito/service/MailValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/avito/testingAvito/service/MailValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/avito/testingAvito/service/dbase/ClosedDateDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/avito/testingAvito/service/dbase/ClosedDateDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/avito/testingAvito/service/dbase/MeetingDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/avito/testingAvito/service/dbase/MeetingDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/avito/testingAvito/service/dbase/PersonDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/avito/testingAvito/service/dbase/PersonDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/addMeeting.mustache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/cancelMeeting.mustache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/avito/testingAvito/service/MailValidator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/avito/testingAvito/service/dbase/ClosedDateDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/avito/testingAvito/service/dbase/MeetingDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/avito/testingAvito/service/dbase/PersonDAO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/main.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main.mustache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/viewFull.mustache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/temp.mustache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/toFix.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/todo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/todo.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -169,7 +150,7 @@
       <workItem from="1577010842268" duration="480000" />
       <workItem from="1577039155576" duration="623000" />
       <workItem from="1577039923529" duration="529000" />
-      <workItem from="1577043959539" duration="8223000" />
+      <workItem from="1577043959539" duration="14147000" />
     </task>
     <task id="LOCAL-00001" summary="temp commit">
       <created>1576928915389</created>
@@ -250,42 +231,42 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="301" y="0" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1576928912544" />
-    <state x="463" y="140" key="FileChooserDialogImpl" timestamp="1577053633976">
+    <state x="463" y="140" key="FileChooserDialogImpl" timestamp="1577055497525">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="463" y="140" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1577053633976" />
-    <state width="1322" height="285" key="GridCell.Tab.0.bottom" timestamp="1577040456917">
+    <state x="463" y="140" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1577055497525" />
+    <state width="1322" height="172" key="GridCell.Tab.0.bottom" timestamp="1577060810153">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1322" height="285" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1577040456917" />
-    <state width="1322" height="285" key="GridCell.Tab.0.center" timestamp="1577040456917">
+    <state width="1322" height="172" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1577060810153" />
+    <state width="1322" height="172" key="GridCell.Tab.0.center" timestamp="1577060810153">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1322" height="285" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1577040456917" />
-    <state width="1322" height="285" key="GridCell.Tab.0.left" timestamp="1577040456917">
+    <state width="1322" height="172" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1577060810153" />
+    <state width="1322" height="172" key="GridCell.Tab.0.left" timestamp="1577060810153">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1322" height="285" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1577040456917" />
-    <state width="1322" height="285" key="GridCell.Tab.0.right" timestamp="1577040456917">
+    <state width="1322" height="172" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1577060810153" />
+    <state width="1322" height="172" key="GridCell.Tab.0.right" timestamp="1577060810153">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1322" height="285" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1577040456917" />
-    <state width="1322" height="172" key="GridCell.Tab.1.bottom" timestamp="1576952304071">
+    <state width="1322" height="172" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1577060810153" />
+    <state width="1322" height="172" key="GridCell.Tab.1.bottom" timestamp="1577060810154">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1322" height="172" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1576952304071" />
-    <state width="1322" height="172" key="GridCell.Tab.1.center" timestamp="1576952304071">
+    <state width="1322" height="172" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1577060810154" />
+    <state width="1322" height="172" key="GridCell.Tab.1.center" timestamp="1577060810153">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1322" height="172" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1576952304071" />
-    <state width="1322" height="172" key="GridCell.Tab.1.left" timestamp="1576952304071">
+    <state width="1322" height="172" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1577060810153" />
+    <state width="1322" height="172" key="GridCell.Tab.1.left" timestamp="1577060810153">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1322" height="172" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1576952304071" />
-    <state width="1322" height="172" key="GridCell.Tab.1.right" timestamp="1576952304071">
+    <state width="1322" height="172" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1577060810153" />
+    <state width="1322" height="172" key="GridCell.Tab.1.right" timestamp="1577060810154">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1322" height="172" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1576952304071" />
+    <state width="1322" height="172" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1577060810154" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1576916986897">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

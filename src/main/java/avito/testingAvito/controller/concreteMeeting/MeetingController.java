@@ -1,12 +1,7 @@
-package avito.testingAvito.controller.meeting;
+package avito.testingAvito.controller.concreteMeeting;
 
-import avito.testingAvito.model.ClosedDate;
 import avito.testingAvito.model.Meeting;
-import avito.testingAvito.model.Person;
 import avito.testingAvito.service.dbase.DBaseFunctional;
-import avito.testingAvito.service.dbase.dao.ClosedDateDAO;
-import avito.testingAvito.service.dbase.dao.MeetingDAO;
-import avito.testingAvito.service.dbase.dao.PersonDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 @Controller
 @RequestMapping("/meeting")
@@ -75,35 +69,16 @@ public class MeetingController {
         return "meeting";
     }
 
-
     //cancels the meeting
     @PostMapping("/cancelMeeting")
     public String cancelMeeting(Map<String, Object> model) {
 
         Meeting meeting = (Meeting) tempMap.get("meetnig");
-        String dateMeeting = meeting.getDate();
-        ClosedDate closedDate, toRemove = null;
-        Set<ClosedDate> closedDateSet;
-        Set<Person> personSet = meeting.getPersonSet();
+        Object[] responce = dBaseFunctional.deleteMeeting(meeting);
+        if (!responce[0].toString().equals("0"))
+            model.put("msg", "IDK what is it, but meeting still exists");
 
-        for (Person person : personSet) {
-            closedDateSet = person.getClosedDateSet();
-            for (ClosedDate tempDate : closedDateSet) {
-                if (tempDate.getDate().equals(dateMeeting)) {
-                    toRemove = tempDate;
-                }
-            }
-            person.deleteOneClosedDate(toRemove);
-            person.deleteOneMeeting(meeting);
-
-            closedDateDAO.save(toRemove);
-
-            personDAO.save(person);
-        }
-
-        meetingDAO.delete(meeting);
-
-        model.put("msg", "The meeting was removed.");
+        model.put("msg", responce[1]);
         return "main";
     }
 

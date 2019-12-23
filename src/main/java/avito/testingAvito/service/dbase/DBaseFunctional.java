@@ -6,11 +6,8 @@ import avito.testingAvito.model.Person;
 import avito.testingAvito.service.dbase.dao.ClosedDateDAO;
 import avito.testingAvito.service.dbase.dao.MeetingDAO;
 import avito.testingAvito.service.dbase.dao.PersonDAO;
+import avito.testingAvito.service.mail.MailValidator;
 import org.springframework.stereotype.Component;
-
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Set;
 
 @Component
@@ -24,6 +21,26 @@ public class DBaseFunctional {
         this.personDAO = personDAO;
         this.meetingDAO = meetingDAO;
         this.closedDateDAO = closedDateDAO;
+    }
+
+    //meeting
+        //create
+    public void createMeeting(String title, String date) {
+        Meeting meeting = new Meeting();
+        meeting.setDate(date);
+        meeting.setTitle(title);
+        meetingDAO.save(meeting);
+    }
+        //get
+    public StringBuilder findAllMeetings() {
+        Iterable<Meeting> meetings = meetingDAO.findAll();
+        StringBuilder builder = new StringBuilder();
+        for (Meeting meeting : meetings) {
+            builder.append(meeting.getTitle() + ", ");
+        }
+        builder.setLength(builder.length() - 2);
+        builder.append(".");
+        return builder;
     }
 
     public Object[] getMeeting(String title) {
@@ -42,6 +59,23 @@ public class DBaseFunctional {
         return responce;
     }
 
+    public StringBuilder getFullList() {
+
+        Iterable<Meeting> meetings = meetingDAO.findAll();
+        StringBuilder builder = new StringBuilder();
+
+        for (Meeting meeting : meetings) {
+            builder.append(meeting.getTitle() + ": ");
+            Iterable<Person> people = meeting.getPersonSet();
+
+            for (Person person : people) {
+                builder.append(person.getName() + ", ");
+            }
+            builder.append(".\n");
+        }
+        return builder;
+    }
+        //change
     public Object[] addPersonToMeeting(Meeting meeting, String name) {
 
         String meetingDate;
@@ -91,7 +125,7 @@ public class DBaseFunctional {
         responce[1] = responce[1].concat("\n" + "The person signed up for the meeting");
         return responce;
     }
-
+        //delete
     public Object[] deletePersonFromMeeting(Meeting meeting, String name) {
 
         String meetingDate = meeting.getDate();
@@ -137,41 +171,50 @@ public class DBaseFunctional {
 
         return responce;
     }
-//--------------------------------------------
-Person person = personDAO.findByName("n1");
-    Meeting meeting = meetingDAO.findByTitle("t");
-    boolean is = false;
-    ClosedDate toRemove = null;
 
-        meeting.deleteOnePerson(person);
-        person.deleteOneMeeting(meeting);
-
-        meetingDAO.save(meeting);
-//--------------------------------------------
     public Object[] deleteMeeting(Meeting meeting) {
         String dateMeeting = meeting.getDate();
         ClosedDate closedDate, toRemove = null;
         Set<ClosedDate> closedDateSet;
         Set<Person> personSet = meeting.getPersonSet();
+        Object[] responce = new Object[2];
 
         for (Person person : personSet) {
             closedDateSet = person.getClosedDateSet();
-            for (ClosedDate tempDate : closedDateSet) {
-                if (tempDate.getDate().equals(dateMeeting)) {
-                    toRemove = tempDate;
+            for (ClosedDate tempClosedDate : closedDateSet) {
+                if (tempClosedDate.getDate().equals(dateMeeting)) {
+                    toRemove = tempClosedDate;
                 }
             }
+
             person.deleteOneClosedDate(toRemove);
             person.deleteOneMeeting(meeting);
 
             closedDateDAO.save(toRemove);
 
-            personDAO.save(person);
+            //нужно ли?
+            // personDAO.save(person);
         }
+        //above i untied all persons from meeting
 
-        meetingDAO.delete(meeting);
+        meeting.deleteAllPerson();
 
-        model.put("msg", "The meeting was removed.");
-        return null;
+        meetingDAO.save(meeting);
+
+        responce[0] = "0";
+        responce[1] = "The meeting was removed.";
+        return responce;
+    }
+    //person
+        //create
+    public boolean createPerson(String name, String mail) {
+        Person person = new Person();
+        person.setName(name);
+        if (!MailValidator.validateMail(mail))
+            return false;
+
+        person.setMail(mail);
+        personDAO.save(person);
+        return true;
     }
 }
