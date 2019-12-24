@@ -8,7 +8,8 @@ import avito.testingAvito.service.dbase.dao.MeetingDAO;
 import avito.testingAvito.service.dbase.dao.PersonDAO;
 import avito.testingAvito.service.mail.MailValidator;
 import org.springframework.stereotype.Component;
-import java.util.Set;
+
+import java.util.*;
 
 @Component
 public class DBaseFunctional {
@@ -24,23 +25,24 @@ public class DBaseFunctional {
     }
 
     //meeting
-        //create
+    //create
     public void createMeeting(String title, String date) {
         Meeting meeting = new Meeting();
         meeting.setDate(date);
         meeting.setTitle(title);
         meetingDAO.save(meeting);
     }
-        //get
-    public StringBuilder findAllMeetings() {
+
+    //get
+    public List<String> findAllMeetingTitles() {
         Iterable<Meeting> meetings = meetingDAO.findAll();
-        StringBuilder builder = new StringBuilder();
+        if (meetings == null)
+            return null;
+        List<String> resultList = new LinkedList<>();
         for (Meeting meeting : meetings) {
-            builder.append(meeting.getTitle() + ", ");
+            resultList.add(meeting.getTitle());
         }
-        builder.setLength(builder.length() - 2);
-        builder.append(".");
-        return builder;
+        return resultList;
     }
 
     public Object[] getMeeting(String title) {
@@ -51,31 +53,44 @@ public class DBaseFunctional {
 
             responce[0] = "1";
             responce[1] = "Uncorrect title";
+        } else {
+            responce[0] = "0";
+            responce[2] = meeting;
         }
-
-        responce[0] = "0";
-        responce[3] = meeting;
 
         return responce;
     }
 
-    public StringBuilder getFullList() {
+    public List<String> getFullList() {
 
         Iterable<Meeting> meetings = meetingDAO.findAll();
         StringBuilder builder = new StringBuilder();
+        List<String> resultList = new LinkedList<>();
 
         for (Meeting meeting : meetings) {
-            builder.append(meeting.getTitle() + ": ");
-            Iterable<Person> people = meeting.getPersonSet();
 
+            builder.append(meeting.getTitle());
+
+            Iterable<Person> people = meeting.getPersonSet();
+            if (!people.iterator().hasNext()) {
+                builder.append(" has no participants.");
+                resultList.add(builder.toString());
+                builder.setLength(0);
+                continue;
+            }
+            builder.append(": ");
             for (Person person : people) {
                 builder.append(person.getName() + ", ");
             }
-            builder.append(".\n");
+            builder.setLength(builder.length() - 2);
+            builder.append(".");
+            resultList.add(builder.toString());
+            builder.setLength(0);
         }
-        return builder;
+        return resultList;
     }
-        //change
+
+    //change
     public Object[] addPersonToMeeting(Meeting meeting, String name) {
 
         String meetingDate;
@@ -89,6 +104,13 @@ public class DBaseFunctional {
             responce[0] = "1";
             responce[1] = "Uncorrect name. The employee doesn't exist.";
             return responce;
+        }
+        for (Person person1 : meeting.getPersonSet()) {
+            if (person1.getId() == person.getId()) {
+                responce[0] = "1";
+                responce[1] = "The person already take a part at the meeting.";
+                return responce;
+            }
         }
 
         meetingDate = meeting.getDate();
@@ -106,10 +128,11 @@ public class DBaseFunctional {
             closedDate.setDate(meetingDate);
             closedDate.setPerson(person);
 
-            person.addOneClosedSet(closedDate);
-            person.addOneMeeting(meeting);
+            closedDateDAO.save(closedDate);
 
-            personDAO.save(person);
+            meeting.addOnePerson(person);
+            meetingDAO.save(meeting);
+            responce[1] = "";
         } else {
             Set<Meeting> meetingSet = person.getMeetingSet();
             for (Meeting meeting1 : meetingSet) {
@@ -125,7 +148,8 @@ public class DBaseFunctional {
         responce[1] = responce[1].concat("\n" + "The person signed up for the meeting");
         return responce;
     }
-        //delete
+
+    //delete
     public Object[] deletePersonFromMeeting(Meeting meeting, String name) {
 
         String meetingDate = meeting.getDate();
@@ -140,7 +164,7 @@ public class DBaseFunctional {
         }
 
         for (Meeting tempMeeting : person.getMeetingSet()) {
-            if (tempMeeting.getTitle().equals(meetingDate)) {
+            if (tempMeeting.getDate().equals(meetingDate)) {
                 coincidence = true;
             }
         }
@@ -149,10 +173,13 @@ public class DBaseFunctional {
             responce[1] = "The person doesn't participate in this meeting.";
         }
 
-        meeting.deleteOnePerson(person);
-        person.deleteOneMeeting(meeting);
+        //idk for what, but without it app doesn't work normally
+        meeting = meetingDAO.findByTitle(meeting.getTitle());
+        person = personDAO.findByName(person.getName());
 
+        meeting.deleteOnePerson(person);
         meetingDAO.save(meeting);
+
         //at the momend person and meeting are untied
         //now i have to untie person and closedSet
 
@@ -161,58 +188,71 @@ public class DBaseFunctional {
                 toRemove = closedDate;
             }
         }
-        person.deleteOneClosedDate(toRemove);
-        toRemove.deletePerson();
 
+        toRemove.deletePerson();
         closedDateDAO.delete(toRemove);
 
         responce[0] = "0";
-        responce[1] = "The person was remover from meeting.";
+        responce[1] = "The person was removed from meeting.";
 
         return responce;
     }
 
     public Object[] deleteMeeting(Meeting meeting) {
+        String title = meeting.getTitle();
         String dateMeeting = meeting.getDate();
-        ClosedDate closedDate, toRemove = null;
+        ClosedDate toRemove = null;
         Set<ClosedDate> closedDateSet;
-        Set<Person> personSet = meeting.getPersonSet();
+        List<Person> personList = new LinkedList<>();
+        personList.addAll(meeting.getPersonSet());
         Object[] responce = new Object[2];
 
-        for (Person person : personSet) {
-            closedDateSet = person.getClosedDateSet();
+        for (int i = 0; i < personList.size(); i++) {
+            closedDateSet = personList.get(i).getClosedDateSet();
             for (ClosedDate tempClosedDate : closedDateSet) {
                 if (tempClosedDate.getDate().equals(dateMeeting)) {
                     toRemove = tempClosedDate;
                 }
             }
 
-            person.deleteOneClosedDate(toRemove);
-            person.deleteOneMeeting(meeting);
+            personList.get(i).deleteOneMeeting(meeting);
+            if (toRemove != null)
+                meeting.deleteOnePerson(personList.get(i));
+            meetingDAO.save(meeting);
 
-            closedDateDAO.save(toRemove);
-
-            //нужно ли?
-            // personDAO.save(person);
+            personList.get(i).deleteOneClosedDate(toRemove);
+            if (toRemove != null) {
+                toRemove.deletePerson();
+                closedDateDAO.delete(toRemove);
+            }
         }
-        //above i untied all persons from meeting
 
-        meeting.deleteAllPerson();
+        meetingDAO.delete(meeting);
 
-        meetingDAO.save(meeting);
+        if (meetingDAO.findByTitle(title) != null) {
+            responce[0] = "0";
+            responce[1] = "Do you really want to remove the meeting?. If yes, please repeat the same operation.";
+        }
+        else {
+            responce[0] = "0";
+            responce[1] = "The meeting was removed.";
+        }
 
-        responce[0] = "0";
-        responce[1] = "The meeting was removed.";
+
+
+
+
         return responce;
     }
+
     //person
-        //create
+    //create
     public boolean createPerson(String name, String mail) {
-        Person person = new Person();
-        person.setName(name);
+
         if (!MailValidator.validateMail(mail))
             return false;
-
+        Person person = new Person();
+        person.setName(name);
         person.setMail(mail);
         personDAO.save(person);
         return true;

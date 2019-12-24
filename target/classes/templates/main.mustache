@@ -7,10 +7,23 @@
 <center>
     {{#msg}}
         {{msg}}
+        </br>
     {{/msg}}
 
+    {{#listMsg}}
+        {{listMsg}}
+        </br>
+    {{/listMsg}}
 
-    <form action="/meeting" method="post">
+    {{#list}}
+        {{toString}}
+        </br>
+    {{/list}}
+
+
+
+
+    <form action="/meeting/" method="post">
         <div><label> To view the details about concrete meeting input title:
             <input type="text" name="title"/> </label></div>
         <div><input type="submit" value="Find"/></div>

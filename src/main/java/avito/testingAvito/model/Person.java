@@ -21,7 +21,7 @@ public class Person {
     private Set<ClosedDate> closedDateSet = new HashSet<>();
 
     @Column(name = "meetings")
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "person_meeting",
             joinColumns = @JoinColumn(name = "person_id"),
             inverseJoinColumns = @JoinColumn(name = "meeting_id"))

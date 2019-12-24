@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Error</title>
+    <title>Meeting</title>
 </head>
 <body>
 <br>
@@ -22,26 +22,26 @@
     </form>
     </br>
 
-    <form action="/meeting/deletePerson" method="post">
-        <div><label> To delete existing person input the name:
-            <input type="text" name="name"/> </label></div>
-        <div><input type="submit" value="Delete"/></div>
-    </form>
-    </br>
+    {{#notEmpty}}
+        <form action="/meeting/deletePerson" method="post">
+            <div><label> To delete existing person input the name:
+                <input type="text" name="name"/> </label></div>
+            <div><input type="submit" value="Delete"/></div>
+        </form>
+        </br>
 
-    <form action="/meeting/sendMail" method="post">
-        <div><label> To send emails to all meeting participants :
-        <div><input type="submit" value="Send"/></div>
-    </form>
-    </br>
+        <form action="/meeting/sendMail" method="post">
+            <div><label> To send emails to all meeting participants :
+                <div><input type="submit" value="Send"/></div>
+        </form>
+        </br>
+    {{/notEmpty}}
 
     <form action="/meeting/cancelMeeting" method="post">
         <div><label> To cancel the meeting click here:
             <div><input type="submit" value="Puff"/></div>
     </form>
     </br>
-
-
 
 
     <a href="/">Back home</a>

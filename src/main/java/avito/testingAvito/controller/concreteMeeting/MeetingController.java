@@ -1,6 +1,7 @@
 package avito.testingAvito.controller.concreteMeeting;
 
 import avito.testingAvito.model.Meeting;
+import avito.testingAvito.model.Person;
 import avito.testingAvito.service.dbase.DBaseFunctional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,7 +9,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 @Controller
 @RequestMapping("/meeting")
@@ -26,18 +29,29 @@ public class MeetingController {
     @PostMapping("/")
     public String meeting(String title, Map<String, Object> model) {
 
-        Object[] responce = dBaseFunctional.getMeeting(title);
+        Object[] responce = dBaseFunctional.getMeeting(title.trim());
         if (responce[0].toString().equals("1")) {
+            List<String> meetingTitles = dBaseFunctional.findAllMeetingTitles();
             model.put("msg", responce[1].toString());
+            model.put("listMsg", "List of active meetings:");
+            model.put("list", meetingTitles);
             return "main";
         }
 
-        tempMap.put("meeting", (Meeting) responce[3]);
-        model.put("msg", "");
-        Meeting meeting = (Meeting) responce[3];
-        model.put("personList", meeting.getPersonSet());
+        Meeting meeting = (Meeting) responce[2];
+        tempMap.put("meeting", meeting);
+        Set<Person> personSet = meeting.getPersonSet();
+        if (personSet.isEmpty())
+            model.put("msg", title + " is empty.");
+        else {
+            model.put("msg", "List of persons: ");
+            model.put("personList", meeting.getPersonSet());
+            model.put("notEmpty", "");
+        }
+
         return "meeting";
     }
+
 
     //adds a persone to meeting
     @PostMapping("/addPerson")
@@ -46,12 +60,8 @@ public class MeetingController {
         Meeting meeting = (Meeting) tempMap.get("meeting");
 
         Object[] responce = dBaseFunctional.addPersonToMeeting(meeting, name);
-        if (responce[0].toString().equals("0")) {
-            model.put("msg", responce[1]);
-            return "meeting";
-        }
         model.put("msg", responce[1]);
-        return "meeting";
+        return "main";
     }
 
     //deletes a persone from meeting
@@ -60,25 +70,29 @@ public class MeetingController {
 
         Meeting meeting = (Meeting) tempMap.get("meeting");
         Object[] responce = dBaseFunctional.deletePersonFromMeeting(meeting, name);
-        if (responce[0].toString().equals("1")) {
-            model.put("msg", responce[1]);
-            return "meeting";
-        }
 
         model.put("msg", responce[1]);
-        return "meeting";
+        return "main";
     }
 
     //cancels the meeting
     @PostMapping("/cancelMeeting")
     public String cancelMeeting(Map<String, Object> model) {
 
-        Meeting meeting = (Meeting) tempMap.get("meetnig");
+        Meeting meeting = (Meeting) tempMap.get("meeting");
         Object[] responce = dBaseFunctional.deleteMeeting(meeting);
         if (!responce[0].toString().equals("0"))
             model.put("msg", "IDK what is it, but meeting still exists");
 
-        model.put("msg", responce[1]);
+        List<String> meetingTitles = dBaseFunctional.findAllMeetingTitles();
+        if (meetingTitles == null) {
+            model.put("msg", "No meetings yet.");
+        }
+        else {
+            model.put("msg", responce[1]);
+            model.put("listMsg", "List of active meetings:");
+            model.put("list", meetingTitles);
+        }
         return "main";
     }
 

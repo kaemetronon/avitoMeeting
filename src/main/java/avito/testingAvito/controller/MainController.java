@@ -1,12 +1,14 @@
 package avito.testingAvito.controller;
 
 
+import avito.testingAvito.model.Meeting;
 import avito.testingAvito.service.dbase.DBaseFunctional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
 import java.util.Map;
 
 
@@ -23,11 +25,13 @@ public class MainController {
     @GetMapping("/")
     public String mainGet(Map<String, Object> model) {
 
-        StringBuilder builder = new StringBuilder();
-        builder.append("List of active meetings:\n");
-        builder.append(dBaseFunctional.findAllMeetings());
-
-        model.put("msg", builder.toString());
+        List<String> meetingTitles = dBaseFunctional.findAllMeetingTitles();
+        if (meetingTitles == null) {
+            model.put("msg", "No meetings yet.");
+        } else {
+            model.put("listMsg", "List of active meetings:");
+            model.put("list", meetingTitles);
+        }
 
         return "main";
     }
@@ -41,34 +45,51 @@ public class MainController {
     @PostMapping("/addMeeting")
     public String addMeetingPost(String title, String date, Map<String, Object> model) {
         dBaseFunctional.createMeeting(title, date);
+        List<String> meetingTitles = dBaseFunctional.findAllMeetingTitles();
+
         model.put("msg", "New meeting was created.");
+        model.put("listMsg", "List of active meetings:");
+        model.put("list", meetingTitles);
+
         return "main";
     }
 
     @GetMapping("/addPerson")
     public String addPersonGet(Map<String, Object> model) {
         model.put("person", "");
-        return "addEntity";
+        return "addEntitiy";
     }
 
     @PostMapping("/addPerson")
     public String addPersonPost(String name, String mail, Map<String, Object> model) {
         if (!dBaseFunctional.createPerson(name, mail))
             model.put("msg", "Error: invalid email.");
-        model.put("msg", "New person was created.");
+        else {
+            model.put("msg", "New person was created.");
+        }
+
+        List<String> meetingTitles = dBaseFunctional.findAllMeetingTitles();
+        if (meetingTitles == null) {
+            model.put("msg", "No meetings yet.");
+        } else {
+            model.put("listMsg", "List of active meetings:");
+            model.put("list", meetingTitles);
+        }
+
         return "main";
     }
 
-    @PostMapping("/viewFull")
+    @GetMapping("/viewFull")
     public String viewFull(Map<String, Object> model) {
-
-        StringBuilder fullLIst = new StringBuilder();
-        fullLIst.append("Full list: \n");
-        fullLIst.append(dBaseFunctional.getFullList());
-        model.put("msg", fullLIst);
+        model.put("msg", "Full list:");
+        List<String> fullList = dBaseFunctional.getFullList();
+        if (fullList.isEmpty()) {
+            model.put("msg", "No meetings yet.");
+        } else {
+            model.put("list", fullList);
+        }
         return "main";
     }
-
 }
 
 
