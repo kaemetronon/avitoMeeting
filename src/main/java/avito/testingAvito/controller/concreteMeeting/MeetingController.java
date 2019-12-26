@@ -3,8 +3,10 @@ package avito.testingAvito.controller.concreteMeeting;
 import avito.testingAvito.model.Meeting;
 import avito.testingAvito.model.Person;
 import avito.testingAvito.service.dbase.DBaseFunctional;
+import avito.testingAvito.service.mail.MyMailSender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -19,10 +21,12 @@ public class MeetingController {
 
     private Map<String, Object> tempMap = new HashMap<>();
     private final DBaseFunctional dBaseFunctional;
+    private final MyMailSender mailSender;
 
     @Autowired
-    public MeetingController(DBaseFunctional dBaseFunctional) {
+    public MeetingController(DBaseFunctional dBaseFunctional, MyMailSender mailSender) {
         this.dBaseFunctional = dBaseFunctional;
+        this.mailSender = mailSender;
     }
 
     //input meeting page and add/delete pers, cancel meeting, send mails
@@ -87,8 +91,7 @@ public class MeetingController {
         List<String> meetingTitles = dBaseFunctional.findAllMeetingTitles();
         if (meetingTitles == null) {
             model.put("msg", "No meetings yet.");
-        }
-        else {
+        } else {
             model.put("msg", responce[1]);
             model.put("listMsg", "List of active meetings:");
             model.put("list", meetingTitles);
@@ -97,8 +100,13 @@ public class MeetingController {
     }
 
     @PostMapping("/sendMail")
-    public String sendMail() {
+    @Transactional(timeout = 120)
+    public String sendMail(Map<String, Object> model) {
 
-        return "";
+        Meeting meeting = (Meeting) tempMap.get("meeting");
+        mailSender.sendMessages(meeting);
+
+        model.put("msg", "Emails was sent.");
+        return "mail";
     }
 }

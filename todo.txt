@@ -1,5 +1,0 @@
-не Controller а RestController??
-что написал илья??
-
-meeting->send emails
-и отлавливать остальное

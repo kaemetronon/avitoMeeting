@@ -75,7 +75,6 @@ public class MainController {
             model.put("listMsg", "List of active meetings:");
             model.put("list", meetingTitles);
         }
-
         return "main";
     }
 
@@ -83,13 +82,15 @@ public class MainController {
     public String viewFull(Map<String, Object> model) {
         model.put("msg", "Full list:");
         List<String> fullList = dBaseFunctional.getFullList();
-        if (fullList.isEmpty()) {
+        if (fullList == null) {
             model.put("msg", "No meetings yet.");
         } else {
             model.put("list", fullList);
         }
         return "main";
     }
+
+
 }
 
 

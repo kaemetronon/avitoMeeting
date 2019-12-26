@@ -3,25 +3,28 @@ package avito.testingAvito.service.dbase;
 import avito.testingAvito.model.ClosedDate;
 import avito.testingAvito.model.Meeting;
 import avito.testingAvito.model.Person;
-import avito.testingAvito.service.dbase.dao.ClosedDateDAO;
-import avito.testingAvito.service.dbase.dao.MeetingDAO;
-import avito.testingAvito.service.dbase.dao.PersonDAO;
+import avito.testingAvito.repo.ClosedDateRepo;
+import avito.testingAvito.repo.MeetingRepo;
+import avito.testingAvito.repo.PersonRepo;
 import avito.testingAvito.service.mail.MailValidator;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
 
-@Component
+@Service
 public class DBaseFunctional {
 
-    private final PersonDAO personDAO;
-    private final MeetingDAO meetingDAO;
-    private final ClosedDateDAO closedDateDAO;
+    private final PersonRepo personRepo;
+    private final MeetingRepo meetingRepo;
+    private final ClosedDateRepo closedDateRepo;
 
-    public DBaseFunctional(PersonDAO personDAO, MeetingDAO meetingDAO, ClosedDateDAO closedDateDAO) {
-        this.personDAO = personDAO;
-        this.meetingDAO = meetingDAO;
-        this.closedDateDAO = closedDateDAO;
+    public DBaseFunctional(PersonRepo personRepo, MeetingRepo meetingRepo, ClosedDateRepo closedDateRepo) {
+        this.personRepo = personRepo;
+        this.meetingRepo = meetingRepo;
+        this.closedDateRepo = closedDateRepo;
     }
 
     //meeting
@@ -30,13 +33,14 @@ public class DBaseFunctional {
         Meeting meeting = new Meeting();
         meeting.setDate(date);
         meeting.setTitle(title);
-        meetingDAO.save(meeting);
+        meetingRepo.save(meeting);
     }
 
     //get
     public List<String> findAllMeetingTitles() {
-        Iterable<Meeting> meetings = meetingDAO.findAll();
-        if (meetings == null)
+
+        Iterable<Meeting> meetings = meetingRepo.findAllByOrderByTitle();
+        if (!meetings.iterator().hasNext())
             return null;
         List<String> resultList = new LinkedList<>();
         for (Meeting meeting : meetings) {
@@ -48,7 +52,7 @@ public class DBaseFunctional {
     public Object[] getMeeting(String title) {
         Object[] responce = new Object[3];
 
-        Meeting meeting = meetingDAO.findByTitle(title);
+        Meeting meeting = meetingRepo.findByTitle(title);
         if (meeting == null) {
 
             responce[0] = "1";
@@ -63,9 +67,11 @@ public class DBaseFunctional {
 
     public List<String> getFullList() {
 
-        Iterable<Meeting> meetings = meetingDAO.findAll();
         StringBuilder builder = new StringBuilder();
         List<String> resultList = new LinkedList<>();
+        Iterable<Meeting> meetings = meetingRepo.findAllByOrderByTitle();
+        if (!meetings.iterator().hasNext())
+            return null;
 
         for (Meeting meeting : meetings) {
 
@@ -97,7 +103,15 @@ public class DBaseFunctional {
         ClosedDate closedDate;
         Set<ClosedDate> closedDateSetClasses;
         Meeting toRemove = null;
-        Person person = personDAO.findByName(name);
+        Person person;
+
+        Optional<Person> personOptional = personRepo.findByName(name);
+        if (personOptional.isPresent()) {
+            person = personOptional.get();
+        }
+        else return null;
+
+
         String[] responce = new String[2];
 
         if (person == null) {
@@ -128,10 +142,10 @@ public class DBaseFunctional {
             closedDate.setDate(meetingDate);
             closedDate.setPerson(person);
 
-            closedDateDAO.save(closedDate);
+            closedDateRepo.save(closedDate);
 
             meeting.addOnePerson(person);
-            meetingDAO.save(meeting);
+            meetingRepo.save(meeting);
             responce[1] = "";
         } else {
             Set<Meeting> meetingSet = person.getMeetingSet();
@@ -142,7 +156,7 @@ public class DBaseFunctional {
             person.deleteOneMeeting(toRemove);
             person.addOneMeeting(meeting);
 
-            personDAO.save(person);
+            personRepo.save(person);
         }
         responce[0] = "0";
         responce[1] = responce[1].concat("\n" + "The person signed up for the meeting");
@@ -155,7 +169,15 @@ public class DBaseFunctional {
         String meetingDate = meeting.getDate();
         boolean coincidence = false;
         ClosedDate toRemove = null;
-        Person person = personDAO.findByName(name);
+        Person person;
+
+        Optional<Person> personOptional = personRepo.findByName(name);
+        if (personOptional.isPresent()) {
+            person =  personOptional.get();
+        }
+        else return null;
+
+
         Object[] responce = new Object[2];
 
         if (person == null) {
@@ -174,11 +196,15 @@ public class DBaseFunctional {
         }
 
         //idk for what, but without it app doesn't work normally
-        meeting = meetingDAO.findByTitle(meeting.getTitle());
-        person = personDAO.findByName(person.getName());
+        meeting = meetingRepo.findByTitle(meeting.getTitle());
+        Optional<Person> personOptional1 = personRepo.findByName(name);
+        if (personOptional1.isPresent()) {
+            person = personOptional1.get();
+        }
+        else return null;
 
         meeting.deleteOnePerson(person);
-        meetingDAO.save(meeting);
+        meetingRepo.save(meeting);
 
         //at the momend person and meeting are untied
         //now i have to untie person and closedSet
@@ -190,7 +216,7 @@ public class DBaseFunctional {
         }
 
         toRemove.deletePerson();
-        closedDateDAO.delete(toRemove);
+        closedDateRepo.delete(toRemove);
 
         responce[0] = "0";
         responce[1] = "The person was removed from meeting.";
@@ -218,18 +244,19 @@ public class DBaseFunctional {
             personList.get(i).deleteOneMeeting(meeting);
             if (toRemove != null)
                 meeting.deleteOnePerson(personList.get(i));
-            meetingDAO.save(meeting);
+            meetingRepo.save(meeting);
 
             personList.get(i).deleteOneClosedDate(toRemove);
             if (toRemove != null) {
                 toRemove.deletePerson();
-                closedDateDAO.delete(toRemove);
+                closedDateRepo.delete(toRemove);
             }
         }
 
-        meetingDAO.delete(meeting);
+        meetingRepo.delete(meeting);
 
-        if (meetingDAO.findByTitle(title) != null) {
+
+        if (meetingRepo.findByTitle(title) != null) {
             responce[0] = "0";
             responce[1] = "Do you really want to remove the meeting?. If yes, please repeat the same operation.";
         }
@@ -237,10 +264,6 @@ public class DBaseFunctional {
             responce[0] = "0";
             responce[1] = "The meeting was removed.";
         }
-
-
-
-
 
         return responce;
     }
@@ -254,7 +277,7 @@ public class DBaseFunctional {
         Person person = new Person();
         person.setName(name);
         person.setMail(mail);
-        personDAO.save(person);
+        personRepo.save(person);
         return true;
     }
 }
