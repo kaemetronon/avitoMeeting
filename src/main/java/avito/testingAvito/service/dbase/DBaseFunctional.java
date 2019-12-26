@@ -49,6 +49,10 @@ public class DBaseFunctional {
         return resultList;
     }
 
+    public Meeting getMeetingObject(String title) {
+        return meetingRepo.findByTitle(title);
+    }
+
     public Object[] getMeeting(String title) {
         Object[] responce = new Object[3];
 

@@ -2,23 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a500982f-8ae8-4ad3-a958-43dfa8e43807" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/readme.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/service/mail/MyMailSender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/avito/testingAvito/service/dbase/AddPersonToMeetingTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/controller/concreteMeeting/MeetingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/controller/concreteMeeting/MeetingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/repo/ClosedDateRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/repo/ClosedDateRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/service/dbase/DBaseFunctional.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/service/dbase/DBaseFunctional.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/service/mail/MailConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/avito/testingAvito/service/mail/MailConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/avito/testingAvito/service/mail/MailConstants.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/avito/testingAvito/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/avito/testingAvito/controller/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/avito/testingAvito/controller/concreteMeeting/MeetingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/avito/testingAvito/controller/concreteMeeting/MeetingController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/avito/testingAvito/service/dbase/AddPersonToMeetingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/avito/testingAvito/service/dbase/AddPersonToMeetingTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/avito/testingAvito/service/dbase/DBaseFunctional.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/avito/testingAvito/service/dbase/DBaseFunctional.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/avito/testingAvito/service/mail/MailConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/avito/testingAvito/service/mail/MailConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/avito/testingAvito/service/mail/MailConstants.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/avito/testingAvito/service/dbase/AddPersonToMeetingTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/avito/testingAvito/service/dbase/AddPersonToMeetingTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +76,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/src_code/dw.spring3.rest" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -106,10 +95,24 @@
       <recent name="C:\Users\Igor\IdeaProjects\testingAvito\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Unnamed">
+  <component name="RunManager" selected="JUnit.avito.testingAvito.service.dbase in testingAvito">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="avito.testingAvito.Application" />
       <module name="testingAvito" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="avito.testingAvito.service.dbase in testingAvito" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="testingAvito" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="avito.testingAvito.service.dbase.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="avito.testingAvito.service.dbase" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -121,6 +124,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.avito.testingAvito.service.dbase in testingAvito" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -161,7 +169,7 @@
       <workItem from="1577145030626" duration="13294000" />
       <workItem from="1577180435669" duration="1071000" />
       <workItem from="1577362885262" duration="321000" />
-      <workItem from="1577370899088" duration="383000" />
+      <workItem from="1577370899088" duration="2257000" />
     </task>
     <task id="LOCAL-00001" summary="temp commit">
       <created>1576928915389</created>
@@ -246,22 +254,22 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="463" y="140" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1577186182685" />
-    <state width="1322" height="340" key="GridCell.Tab.0.bottom" timestamp="1577158385873">
+    <state width="1322" height="245" key="GridCell.Tab.0.bottom" timestamp="1577373480711">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1322" height="340" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1577158385873" />
-    <state width="1322" height="340" key="GridCell.Tab.0.center" timestamp="1577158385873">
+    <state width="1322" height="245" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1577373480711" />
+    <state width="1322" height="245" key="GridCell.Tab.0.center" timestamp="1577373480711">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1322" height="340" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1577158385873" />
-    <state width="1322" height="340" key="GridCell.Tab.0.left" timestamp="1577158385873">
+    <state width="1322" height="245" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1577373480711" />
+    <state width="1322" height="245" key="GridCell.Tab.0.left" timestamp="1577373480711">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1322" height="340" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1577158385873" />
-    <state width="1322" height="340" key="GridCell.Tab.0.right" timestamp="1577158385873">
+    <state width="1322" height="245" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1577373480711" />
+    <state width="1322" height="245" key="GridCell.Tab.0.right" timestamp="1577373480711">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1322" height="340" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1577158385873" />
+    <state width="1322" height="245" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1577373480711" />
     <state width="1322" height="340" key="GridCell.Tab.1.bottom" timestamp="1577158385873">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -282,14 +290,14 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1366.768@0.0.1366.768" timestamp="1576916986897" />
-    <state x="186" y="0" key="SettingsEditor" timestamp="1577138422954">
+    <state x="186" y="0" key="SettingsEditor" timestamp="1577372961010">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="186" y="0" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1577138422954" />
-    <state x="494" y="301" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576928893723">
+    <state x="186" y="0" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1577372961010" />
+    <state x="494" y="301" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1577372509585">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="494" y="301" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.768@0.0.1366.768" timestamp="1576928893723" />
+    <state x="494" y="301" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.768@0.0.1366.768" timestamp="1577372509585" />
     <state x="493" y="102" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1577157818097">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
