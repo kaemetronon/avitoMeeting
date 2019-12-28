@@ -1,4 +1,4 @@
-Bsased on Spring Boot, SQL - PostgreSQL.
+Based on Spring Boot, SQL - PostgreSQL.
 Визуализация не требовалась, но и не была запрещена, поэтому это web-приложение.
 Перед финальной сборкой изменить параметры почты отправителя в avito/testingAvito/service/mail/MailConfig.java
 
